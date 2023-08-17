@@ -1,0 +1,5 @@
+save/
+.git/
+.csv_dir/
+.idea
+__pycache__/

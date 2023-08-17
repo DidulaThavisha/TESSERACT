@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+
+python train.py --batch_size 64 --model 'resnet50' --dataset 'OLIVES' --epochs 100 --device 'cuda:0' --train_image_path '/data/Datasets' --test_image_path '/home/kiran/Dropbox (GhassanGT)/Kiran/InSync/PhDResearch/Misc/' --test_csv_path './csv_dir/test_set_labels.csv' --train_csv_path './csv_dir/Training_Biomarker_Data.csv'
