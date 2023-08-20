@@ -124,7 +124,7 @@ def main():
         train_supervised(train_loader, model, criterion, optimizer, epoch, opt)
 
     submission_generate(test_loader, model, opt)
-    sample_evaluation(test_loader, model, opt)
+    #sample_evaluation(test_loader, model, opt)
 
     save_file = os.path.join(
         opt.save_folder, 'last.pth')
