@@ -45,7 +45,7 @@ class RECOVERY(data.Dataset):
         image = np.array(image)
         image = Image.fromarray(image)
         image = self.transforms(image)
-        return image
+        return image,bio_tensor
 
 
 
