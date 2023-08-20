@@ -45,7 +45,14 @@ class RECOVERY(data.Dataset):
         image = np.array(image)
         image = Image.fromarray(image)
         image = self.transforms(image)
-        return image
+        b1 = self.df.iloc[idx,1]
+        b2 = self.df.iloc[idx,2]
+        b3 = self.df.iloc[idx,3]
+        b4 = self.df.iloc[idx, 4]
+        b5 = self.df.iloc[idx, 5]
+        b6 = self.df.iloc[idx, 6]
+        bio_tensor = torch.tensor([b1, b2, b3, b4, b5, b6])
+        return image,bio_tensor
 
 
 
