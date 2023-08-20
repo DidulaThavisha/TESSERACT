@@ -86,7 +86,7 @@ def sample_evaluation(val_loader, model, opt):
     out_list = []
     label_list = []
     with torch.no_grad():
-        print(enumerate(val_loader))
+        print(val_loader)
         for idx, (image,bio_tensor) in (enumerate(val_loader)):
             
             images = image.float().to(device)
