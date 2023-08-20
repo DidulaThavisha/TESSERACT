@@ -64,7 +64,7 @@ def submission_generate(val_loader, model, opt):
     device = opt.device
     out_list = []
     with torch.no_grad():
-        for idx, (image,bio_tensor) in (enumerate(val_loader)):
+        for idx, image in (enumerate(val_loader)):
 
             images = image.float().to(device)
 
