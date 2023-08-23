@@ -41,6 +41,7 @@ def set_loader(opt):
     normalize = transforms.Normalize(mean=mean, std=std)
 
     train_transform = transforms.Compose([
+        transforms.RandomResizedCrop(size=224, scale=(0.2, 1.)),
         transforms.RandomHorizontalFlip(p=0.5),
         transforms.RandomAffine(degrees=0, translate=(0.25, 0.25), scale=(0.5, 1.5)),
         transforms.RandomAffine(degrees=0, scale=(0.5, 1.5)),
