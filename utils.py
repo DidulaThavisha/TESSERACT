@@ -41,14 +41,14 @@ def set_loader(opt):
     normalize = transforms.Normalize(mean=mean, std=std)
 
     train_transform = transforms.Compose([
-        transforms.RandomResizedCrop(size=224, scale=(0.2, 1.)),
-        transforms.RandomHorizontalFlip(),
-
-        transforms.RandomApply([
-            transforms.ColorJitter(0.4, 0.4, 0.4, 0.1)
-        ], p=0.8),
+        transforms.RandomHorizontalFlip(p=0.5),
+        transforms.RandomAffine(degrees=0, translate=(0.25, 0.25), scale=(0.5, 1.5)),
+        transforms.RandomAffine(degrees=0, scale=(0.5, 1.5)),
+        transforms.ColorJitter(brightness=0.6, contrast=0.6, saturation=0.6, hue=0.2),
         transforms.RandomGrayscale(p=0.2),
+        transforms.RandomAffine(degrees=0, scale=(0.5, 1.5)),
         transforms.ToTensor(),
+        transforms.RandomAffine(degrees=0, scale=(0.5, 1.5)),
         normalize,
     ])
 
