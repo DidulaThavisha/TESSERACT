@@ -46,9 +46,7 @@ def set_loader(opt):
         transforms.RandomAffine(degrees=0, scale=(0.5, 1.5)),
         transforms.ColorJitter(brightness=0.6, contrast=0.6, saturation=0.6, hue=0.2),
         transforms.RandomGrayscale(p=0.2),
-        transforms.RandomAffine(degrees=0, scale=(0.5, 1.5)),
         transforms.ToTensor(),
-        transforms.RandomAffine(degrees=0, scale=(0.5, 1.5)),
         normalize,
     ])
 
