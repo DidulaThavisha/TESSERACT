@@ -15,7 +15,7 @@ class OLIVES(data.Dataset):
 
     def __getitem__(self, idx):
         path = self.img_dir + self.df.iloc[idx,0]
-        image = Image.open(path)
+        image = Image.open(path).convert("RGB")
         #image = Image.open(path).convert("L")
         image = np.array(image)
         image = Image.fromarray(image)
@@ -42,7 +42,7 @@ class RECOVERY(data.Dataset):
 
     def __getitem__(self, idx):
         path = self.img_dir + self.df.iloc[idx,0]
-        image = Image.open(path)
+        image = Image.open(path).convert("RGB")
         image = np.array(image)
         image = Image.fromarray(image)
         image = self.transforms(image)
@@ -67,7 +67,7 @@ class RECOVERY_TEST(data.Dataset):
 
     def __getitem__(self, idx):
         path = self.img_dir + self.df.iloc[idx,0]
-        image = Image.open(path)
+        image = Image.open(path).convert("RGB")
         image = np.array(image)
         image = Image.fromarray(image)
         image = self.transforms(image)
