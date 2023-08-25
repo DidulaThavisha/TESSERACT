@@ -13,8 +13,8 @@ class ResNet(nn.Module):
             self.encoder.features[0] = nn.Conv2d(1, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
             self.encoder.classifier[6] = nn.Identity()
             self.fc = nn.Linear(4096, num_classes)
-        elif name == 'vit:
-            if name == 'vit':
+        elif name == 'vit':
+           
             self.encoder = torchvision.models.vit_b_16(pretrained=True)
             self.encoder.conv1 = nn.Conv2d(1, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
             self.encoder.fc = nn.Identity()
