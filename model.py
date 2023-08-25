@@ -16,14 +16,13 @@ class ResNet(nn.Module):
         elif name == 'vit':
            
             self.encoder = torchvision.models.vit_b_16(pretrained=True,in_channels=1)
-            self.encoder.conv1 = nn.Conv2d(6, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            self.encoder.conv1 = nn.Conv2d(1, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
             self.encoder.fc = nn.Identity()
             self.fc = nn.Linear(4096, num_classes)
         elif name == 'unet':
             self.encoder = torch.hub.load('mateuszbuda/brain-segmentation-pytorch', 'unet', in_channels=3, out_channels=1, init_features=32, pretrained=True)
-            self.encoder.conv1 = nn.Conv2d(1, 64, kernel_size=(1, 1), stride=(1, 1), padding=(1, 1))
-            #self.encoder.features[0] = nn.Conv2d(1, 64, kernel_size=(3, 3), stride=False, padding=(1, 1))
-            self.encoder.fc= nn.Identity()
+            self.encoder.features[0] = nn.Conv2d(1, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            self.encoder.classifier[6] = nn.Identity()
             self.fc = nn.Linear(224, num_classes)
         else:
             self.encoder = torchvision.models.resnet152(zero_init_residual=True)
