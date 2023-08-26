@@ -21,7 +21,7 @@ class ResNet(nn.Module):
             self.fc = nn.Linear(4096, num_classes)
         elif name == 'unet':
             self.encoder = torch.hub.load('mateuszbuda/brain-segmentation-pytorch', 'unet', in_channels=3, out_channels=1, init_features=32, pretrained=True)
-            self.encoder.conv1 =  nn.AdaptiveAvgPool2d(output_size=(1,1))
+            self.encoder.fc =  nn.AdaptiveAvgPool2d(output_size=(1,1))
             #self.encoder.fc = nn.Identity()
             #
             #self.fc =  nn.AdaptiveAvgPool2d(output_size=(1,1))
