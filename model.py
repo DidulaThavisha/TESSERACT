@@ -26,7 +26,7 @@ class ResNet(nn.Module):
             #
             #self.fc =  nn.AdaptiveAvgPool2d(output_size=(1,1))
             self.fc =  nn.Flatten()
-            self.fc =  nn.Linear(in_features=50176, out_features=6)
+            self.fc =  nn.Linear(in_features=224, out_features=6)
             
             
         else:
