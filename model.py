@@ -24,7 +24,9 @@ class ResNet(nn.Module):
             self.encoder.conv1 =  nn.Flatten()
             #self.encoder.fc = nn.Identity()
             #
-            self.fc =  nn.AdaptiveAvgPool2d(output_size=(64,6))
+            self.fc =  nn.AdaptiveAvgPool2d(output_size=(1,1))
+            self.fc =  nn.Flatten()
+            
             
         else:
             self.encoder = torchvision.models.resnet152(zero_init_residual=True)
