@@ -21,9 +21,8 @@ class ResNet(nn.Module):
             self.fc = nn.Linear(4096, num_classes)
         elif name == 'unet':
             self.encoder = torch.hub.load('mateuszbuda/brain-segmentation-pytorch', 'unet', in_channels=3, out_channels=1, init_features=32, pretrained=True)
-            self.encoder.conv1 = nn.Conv2d(6, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            self.encoder.conv1 = nn.Flatten()
             #self.encoder.fc = nn.Identity()
-            self.encoder.fc = nn.Flatten()
             self.fc = nn.Linear(224,6)
         else:
             self.encoder = torchvision.models.resnet152(zero_init_residual=True)
