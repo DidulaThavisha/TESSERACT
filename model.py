@@ -29,7 +29,7 @@ class ResNet(nn.Module):
             self.fc = nn.Sequential(
                 nn.Flatten(),  # Flatten the 2D feature map
                 nn.Linear(50176, 128),  # Linear layer with input size 50176 and output size 128
-                nn.ReLU(),  # Apply ReLU activation
+                nn.Sigmoid(),  # Apply ReLU activation
                 nn.Linear(128, 6)  # Linear layer with input size 128 and output size 6
 )
          
