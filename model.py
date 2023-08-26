@@ -29,8 +29,9 @@ class ResNet(nn.Module):
             self.fc = nn.Sequential(
                 nn.Flatten(),
                 nn.Linear(50176, 128),
-                nn.Sigmoid(),
-                nn.Linear(128, 6)
+                nn.ReLU(),
+                nn.Linear(128, 6),
+                nn.Sigmoid()
                 
                 #nn.Flatten(),  # Flatten the 2D feature map
                 #nn.Linear(50176, 224), 
