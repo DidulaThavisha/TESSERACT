@@ -27,21 +27,21 @@ class ResNet(nn.Module):
             #self.fc =  nn.AdaptiveAvgPool2d(output_size=(1,1))
             self.fc =  nn.Flatten()
             self.fc = nn.Sequential(
-                #nn.Flatten(),
-                #nn.Linear(50176, 128),
-                #nn.ReLU(),
-                #nn.Linear(128, 6),
-                #nn.Sigmoid()
-                
-                nn.Flatten(),  # Flatten the 2D feature map
-                nn.Linear(50176, 224), 
-                nn.BatchNorm1d(224),# Linear layer with input size 50176 and output size 128
+                nn.Flatten(),
+                nn.Linear(50176, 128),
                 nn.ReLU(),
-                #nn.Dropout(0.5),# Apply ReLU activation
-                nn.Linear(224, 224),
-                nn.BatchNorm1d(224),
-                nn.Linear(224, 6),
-                nn.Sigmoid()# Linear layer with input size 128 and output size 6
+                nn.Linear(128, 6),
+                nn.Sigmoid()
+                
+                #nn.Flatten(),  # Flatten the 2D feature map
+                #nn.Linear(50176, 224), 
+                #nn.BatchNorm1d(224),# Linear layer with input size 50176 and output size 128
+                #nn.ReLU(),
+                ##nn.Dropout(0.5),# Apply ReLU activation
+                #nn.Linear(224, 224),
+                #nn.BatchNorm1d(224),
+                #nn.Linear(224, 6),
+                #nn.Sigmoid()# Linear layer with input size 128 and output size 6
                 
 )
          
