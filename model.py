@@ -28,21 +28,12 @@ class ResNet(nn.Module):
             self.xgb_classifier = xgb.XGBClassifier(
                 n_estimators=100,
                 max_depth=3,
-                learning_rate=0.1,
+                learning_rate=0.001,
                 objective='multi:softmax',  # Adjust for your problem type
                 num_class=6,  # Number of classes in your problem
                 random_state=42
             )
-            self.fc = nn.Sequential(
-                nn.Flatten(),
-                nn.Linear(50176, 128),
-                nn.Sigmoid(),
-                #nn.ReLU(),
-                nn.Linear(128, 6),
-                #nn.Sigmoid()
-
-            )
-            
+            self.fc = nn.Linear(6, num_classes)
             #self.encoder = torch.hub.load('mateuszbuda/brain-segmentation-pytorch', 'unet', in_channels=3, out_channels=1, init_features=32, pretrained=True)
             #self.encoder.fc =  nn.AdaptiveAvgPool2d(output_size=(1,1))
             #self.fc =  nn.Flatten()
