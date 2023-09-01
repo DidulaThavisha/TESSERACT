@@ -41,7 +41,7 @@ class ResNet(nn.Module):
                 nn.Linear(128, 6),
                 #nn.Sigmoid()
 
-           
+            )
             
             #self.encoder = torch.hub.load('mateuszbuda/brain-segmentation-pytorch', 'unet', in_channels=3, out_channels=1, init_features=32, pretrained=True)
             #self.encoder.fc =  nn.AdaptiveAvgPool2d(output_size=(1,1))
