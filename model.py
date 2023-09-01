@@ -56,7 +56,7 @@ class ResNet(nn.Module):
                 #nn.Linear(224, 6),
                 #nn.Sigmoid()# Linear layer with input size 128 and output size 6
                 
-)
+
          
             
             
