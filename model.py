@@ -33,6 +33,13 @@ class ResNet(nn.Module):
                 num_class=6,  # Number of classes in your problem
                 random_state=42
             )
+            self.fc = nn.Sequential(
+                nn.Flatten(),
+                nn.Linear(50176, 128),
+                nn.Sigmoid(),
+                #nn.ReLU(),
+                nn.Linear(128, 6),
+                #nn.Sigmoid()
 
            
             
@@ -72,6 +79,6 @@ class ResNet(nn.Module):
         features = self.encoder(x)
         features_np = features.detach().cpu().numpy()  # Convert to numpy array
 
-        return self.fc(features_np)  # Return extracted features for XGBoost
+        return self.fc(features_np) # Return extracted features for XGBoost
         #return self.fc(self.encoder(x))
 
