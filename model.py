@@ -68,7 +68,7 @@ class ResNet(nn.Module):
     def forward(self, x):
         # Forward pass through the UNet encoder
         features = self.encoder(x)
-        features_np = features.detach().cpu().numpy()  # Convert to numpy array
+        features_np = features.detach().cpu() # Convert to numpy array
 
         return self.fc(features_np) # Return extracted features for XGBoost
         #return self.fc(self.encoder(x))
