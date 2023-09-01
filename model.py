@@ -7,7 +7,7 @@ import torchvision
 
 class ResNet(nn.Module):
     """encoder + classifier"""
-    def __init__(self, name='vgg19', num_classes=2):
+    def __init__(self, name='unet', num_classes=2):
         super(ResNet, self).__init__()
         if name == 'vgg19':
             self.encoder = torchvision.models.vgg19(pretrained=True)
@@ -66,7 +66,12 @@ class ResNet(nn.Module):
             self.encoder.conv1 = nn.Conv2d(1, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
             self.encoder.fc = nn.Identity()
             self.fc = nn.Linear(2048, num_classes)
+    #def forward(self, x):
     def forward(self, x):
+        # Forward pass through the UNet encoder
+        features = self.encoder(x)
+        features_np = features.detach().cpu().numpy()  # Convert to numpy array
 
-        return self.fc(self.encoder(x))
+        return features_np  # Return extracted features for XGBoost
+        #return self.fc(self.encoder(x))
 
