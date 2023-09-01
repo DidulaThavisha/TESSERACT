@@ -72,6 +72,6 @@ class ResNet(nn.Module):
         features = self.encoder(x)
         features_np = features.detach().cpu().numpy()  # Convert to numpy array
 
-        return features_np  # Return extracted features for XGBoost
+        return self.fc(features_np)  # Return extracted features for XGBoost
         #return self.fc(self.encoder(x))
 
