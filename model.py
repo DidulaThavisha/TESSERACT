@@ -33,16 +33,16 @@ class ResNet(nn.Module):
                 num_class=6,  # Number of classes in your problem
                 random_state=42
             )
-            self.fc = nn.Linear(224, num_classes)
+            #self.fc = nn.Linear(224, num_classes)
             #self.encoder = torch.hub.load('mateuszbuda/brain-segmentation-pytorch', 'unet', in_channels=3, out_channels=1, init_features=32, pretrained=True)
             #self.encoder.fc =  nn.AdaptiveAvgPool2d(output_size=(1,1))
             #self.fc =  nn.Flatten()
-            #self.fc = nn.Sequential(
-                #nn.Flatten(),
-                #nn.Linear(50176, 128),
-                #nn.Sigmoid(),
+            self.fc = nn.Sequential(
+                nn.Flatten(),
+                nn.Linear(50176, 128),
+                nn.Sigmoid(),
                 #nn.ReLU(),
-                #nn.Linear(128, 6),
+                nn.Linear(128, 6),
                 #nn.Sigmoid()
                 
                 #nn.Flatten(),  # Flatten the 2D feature map
