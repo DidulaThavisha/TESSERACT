@@ -22,12 +22,12 @@ class OLIVES(data.Dataset):
         image = self.transforms(image)
         b1 = self.df.iloc[idx,1]
         b2 = self.df.iloc[idx,2]
-        #b3 = self.df.iloc[idx,3]
-        #b4 = self.df.iloc[idx, 4]
-        #b5 = self.df.iloc[idx, 5]
-        #b6 = self.df.iloc[idx, 6]
-        #bio_tensor = torch.tensor([b1, b2, b3, b4, b5, b6])
-        bio_tensor = torch.tensor([b1, b2 ])
+        b3 = self.df.iloc[idx,3]
+        b4 = self.df.iloc[idx, 4]
+        b5 = self.df.iloc[idx, 5]
+        b6 = self.df.iloc[idx, 6]
+        bio_tensor = torch.tensor([b1, b2, b3, b4, b5, b6])
+        #bio_tensor = torch.tensor([b1, b2 ])
         return image, bio_tensor
 
 
@@ -49,12 +49,12 @@ class RECOVERY(data.Dataset):
         image = self.transforms(image)
         b1 = self.df.iloc[idx,1]
         b2 = self.df.iloc[idx,2]
-        #b3 = self.df.iloc[idx,3]
-        #b4 = self.df.iloc[idx, 4]
-        #b5 = self.df.iloc[idx, 5]
-        #b6 = self.df.iloc[idx, 6]
-        #bio_tensor = torch.tensor([b1, b2, b3, b4, b5, b6])
-        bio_tensor = torch.tensor([b1, b2 ])
+        b3 = self.df.iloc[idx,3]
+        b4 = self.df.iloc[idx, 4]
+        b5 = self.df.iloc[idx, 5]
+        b6 = self.df.iloc[idx, 6]
+        bio_tensor = torch.tensor([b1, b2, b3, b4, b5, b6])
+        #bio_tensor = torch.tensor([b1, b2 ])
         return image,bio_tensor
 
 
@@ -75,11 +75,11 @@ class RECOVERY_TEST(data.Dataset):
         image = self.transforms(image)
         b1 = self.df.iloc[idx,1]
         b2 = self.df.iloc[idx,2]
-        #b3 = self.df.iloc[idx,3]
-        #b4 = self.df.iloc[idx, 4]
-        #b5 = self.df.iloc[idx, 5]
-        #b6 = self.df.iloc[idx, 6]
-        #bio_tensor = torch.tensor([b1, b2, b3, b4, b5, b6])
-        bio_tensor = torch.tensor([b1, b2] )
+        b3 = self.df.iloc[idx,3]
+        b4 = self.df.iloc[idx, 4]
+        b5 = self.df.iloc[idx, 5]
+        b6 = self.df.iloc[idx, 6]
+        bio_tensor = torch.tensor([b1, b2, b3, b4, b5, b6])
+        #bio_tensor = torch.tensor([b1, b2] )
         return image, bio_tensor
 
