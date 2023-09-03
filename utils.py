@@ -22,6 +22,7 @@ def set_model(opt):
     model = model.to(device)
     criterion = criterion.to(device)
 
+    torch.save(model.state_dict(),'tuned_model.pth')
 
     return model, criterion
 
