@@ -17,8 +17,8 @@ def set_model(opt):
     
     device = opt.device
     model = ResNet(name=opt.model,num_classes = opt.ncls)
-    criterion = torch.nn.MSELoss()
-    #criterion = torch.nn.BCEWithLogitsLoss()
+    #criterion = torch.nn.MSELoss()
+    criterion = torch.nn.BCEWithLogitsLoss()
 
     model = model.to(device)
     criterion = criterion.to(device)
