@@ -13,8 +13,8 @@ from datasets import OLIVES, RECOVERY, RECOVERY_TEST
 
 import torch.nn as nn
 def set_model(opt):
-
-
+    
+    
     device = opt.device
     model = ResNet(name=opt.model,num_classes = opt.ncls)
     criterion = torch.nn.BCEWithLogitsLoss()
