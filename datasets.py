@@ -27,7 +27,7 @@ class OLIVES(data.Dataset):
         #b5 = self.df.iloc[idx, 5]
         #b6 = self.df.iloc[idx, 6]
         #bio_tensor = torch.tensor([b1, b2, b3, b4, b5, b6])
-        bio_tensor = torch.tensor([b1, b2, )
+        bio_tensor = torch.tensor([b1, b2 )
         return image, bio_tensor
 
 
@@ -54,7 +54,7 @@ class RECOVERY(data.Dataset):
         #b5 = self.df.iloc[idx, 5]
         #b6 = self.df.iloc[idx, 6]
         #bio_tensor = torch.tensor([b1, b2, b3, b4, b5, b6])
-        bio_tensor = torch.tensor([b1, b2, )
+        bio_tensor = torch.tensor([b1, b2 )
         return image,bio_tensor
 
 
@@ -80,6 +80,6 @@ class RECOVERY_TEST(data.Dataset):
         #b5 = self.df.iloc[idx, 5]
         #b6 = self.df.iloc[idx, 6]
         #bio_tensor = torch.tensor([b1, b2, b3, b4, b5, b6])
-        bio_tensor = torch.tensor([b1, b2, )
+        bio_tensor = torch.tensor([b1, b2 )
         return image, bio_tensor
 
