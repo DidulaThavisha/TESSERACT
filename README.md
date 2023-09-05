@@ -8,6 +8,7 @@ This competition is based on the [OLIVES](https://proceedings.neurips.cc/paper_f
 Feel free to check our lab's [Website](https://ghassanalregib.info/publications) 
 and [GitHub](https://github.com/olivesgatech) for other interesting work!!!
 
+The starter code provided was optimized and submitted to the competition by Team TESSERACT.
 ***
 
 ## Citation
