@@ -42,7 +42,7 @@ Submit this csv file to the following server ...
 ## Starter Code Usage
 
 
-python train.py --batch_size 128 --model 'resnet18' --dataset 'OLIVES' --epochs 1 --device 'cuda:0' --train_image_path '' --test_image_path '' --test_csv_path './csv_dir/test_set_submission_template.csv' --train_csv_path './csv_dir/Training_Biomarker_Data.csv'
+python train.py --batch_size 64 --model 'unet' --dataset 'OLIVES' --epochs 150 --device 'cuda:0' --train_image_path '' --test_image_path '' --test_csv_path './csv_dir/test_set_submission_template.csv' --train_csv_path './csv_dir/Training_Biomarker_Data.csv'
 
 Fill this out with the appropriate file path fields for the training and test data to train a model and produce a numpy 
 that can act as a valid submission once the file paths are appended and saved as a csv.
