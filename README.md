@@ -8,8 +8,10 @@ This competition is based on the [OLIVES](https://proceedings.neurips.cc/paper_f
 Feel free to check our lab's [Website](https://ghassanalregib.info/publications) 
 and [GitHub](https://github.com/olivesgatech) for other interesting work!!!
 
-The starter code provided, was optimized and submitted to the competition by Team TESSERACT.
+The starter code provided, was optimized and submitted to the competition by Team TESSERACT. 
 ***
+Also I'm very happy to announce that we have achieved global 6th Rank with a F1 score of 0.7921 
+![WhatsApp Image 2023-09-09 at 14 08 52](https://github.com/DidulaThavisha/TESSERACT/assets/86177477/ded435f4-966a-4417-9830-35a11cd8f9be)
 
 ## Citation
 
