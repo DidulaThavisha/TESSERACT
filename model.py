@@ -54,11 +54,7 @@ class ResNet(nn.Module):
                 #nn.BatchNorm1d(224),
                 #nn.Linear(224, 6),
                 #nn.Sigmoid()# Linear layer with input size 128 and output size 6
-                
 
-         
-            
-            
         else:
             self.encoder = torchvision.models.resnet152(zero_init_residual=True)
             self.encoder.conv1 = nn.Conv2d(1, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
