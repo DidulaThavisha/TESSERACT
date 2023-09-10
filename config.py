@@ -52,10 +52,9 @@ def parse_option():
                         help='temperature for loss function')
 
 
-
     opt = parser.parse_args()
 
-    # check if dataset is path that passed required arguments
+    # Check if dataset is a path that passed the required arguments
     if opt.dataset == 'path':
         assert opt.data_folder is not None \
                and opt.mean is not None \
