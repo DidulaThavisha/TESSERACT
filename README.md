@@ -1,7 +1,7 @@
 # VIP CUP 2023 OLIVES Biomarker Detection
 
 
-***
+****
 
 This work was done in the [Omni Lab for Intelligent Visual Engineering and Science (OLIVES) @ Georgia Tech](https://ghassanalregib.info/). 
 This competition is based on the [OLIVES](https://proceedings.neurips.cc/paper_files/paper/2022/hash/3be60b4a739b95a07a944a1a2c41e05e-Abstract-Datasets_and_Benchmarks.html) dataset published at NeurIPS 2022.
